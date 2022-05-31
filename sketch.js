@@ -3,6 +3,7 @@
  *  @date 2022.05.30
  *
  *  ☒ create project (start with template directory)
+ *  ☒ add JSON formatter
  *  ☐ load the JSON NEO with a callback, print
  *  ☐ load the JSON SNC with a callback, print
  *  ☐ load the JSON SNC + NEO as a callback, try printing
@@ -37,6 +38,13 @@ function setup() {
         numpad 1 → freeze sketch</pre>`)
 
     debugCorner = new CanvasDebugCorner(5)
+
+    loadJSON("https://api.scryfall.com/cards/search?q=set:neo", gotData)
+}
+
+// callback function for loadJSON
+function gotData(data) {
+    print(data["data"].length)
 }
 
 
