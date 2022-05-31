@@ -4,13 +4,13 @@
  *
  *  ☒ create project (start with template directory)
  *  ☒ add JSON formatter
- *  ☐ load the JSON NEO with a callback, print
- *  ☐ load the JSON SNC with a callback, print
+ *  ☒ load the JSON NEO with a callback, print
+ *  ☒ load the JSON SNC with a callback, print
  *  ☐ load the JSON SNC + NEO as a callback, try printing
  *  ☐ access hasMore, print nextPage if hasMore is true
  *  ☐ loadJSON with nextPage if hasMore, print data
- *  ☐ print the array lengths, make sure they are correct
  *  ☐ recursively call loadJSON, gotData
+ *  ☐ print the array lengths, make sure they are correct
  *
  *  TODO NEO.length === 287, SNC.length === 266
  *
@@ -39,12 +39,12 @@ function setup() {
 
     debugCorner = new CanvasDebugCorner(5)
 
-    loadJSON("https://api.scryfall.com/cards/search?q=set:neo", gotData)
+    loadJSON("https://api.scryfall.com/cards/search?q=set:snc", gotData)
 }
 
 // callback function for loadJSON
 function gotData(data) {
-    print(data["data"].length)
+    print(data)
 }
 
 
